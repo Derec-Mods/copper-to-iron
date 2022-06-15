@@ -33,6 +33,7 @@ public class CopperConverter extends Block
             if(player.getStackInHand(hand).getItem().equals(Items.COPPER_INGOT))
             {
                 int cnt = player.getStackInHand(hand).getCount();
+                cnt/=2;
                 player.getStackInHand(hand).setCount(0);
                 player.giveItemStack(new ItemStack(Items.IRON_INGOT, cnt));
                 world.playSound(null, pos, SoundEvents.ENTITY_SPLASH_POTION_BREAK,

@@ -1,6 +1,7 @@
 package net.derex.tutorialmod.block;
 
 import net.derex.tutorialmod.TutorialMod;
+import net.derex.tutorialmod.block.custom.CopperConverter;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -14,7 +15,7 @@ import net.minecraft.util.registry.Registry;
 public class ModBlocks
 {
     public static final Block COPPER_CONVERTER = registerBlock("copper_converter",
-            new Block(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool()),
+            new CopperConverter(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool()),
             ItemGroup.DECORATIONS);
 
     private static Block registerBlock(String name, Block block, ItemGroup group)

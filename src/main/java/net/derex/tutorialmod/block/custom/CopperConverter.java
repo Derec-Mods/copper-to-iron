@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -33,8 +34,9 @@ public class CopperConverter extends Block
             {
                 int cnt = player.getStackInHand(hand).getCount();
                 player.getStackInHand(hand).setCount(0);
-                player.giveItemStack(new ItemStack(Items.IRON_INGOT));
-//                world.playSound(null, pos, SoundEvents.ENTITY_SPLASH_POTION_BREAK,);
+                player.giveItemStack(new ItemStack(Items.IRON_INGOT, cnt));
+                world.playSound(null, pos, SoundEvents.ENTITY_SPLASH_POTION_BREAK,
+                        SoundCategory.BLOCKS,1f,1f);
             }
 //            player.getStackInHand(hand).setCount(0);
         }

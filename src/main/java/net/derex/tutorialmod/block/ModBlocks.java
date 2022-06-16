@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry;
 public class ModBlocks
 {
     public static final Block COPPER_CONVERTER = registerBlock("copper_converter",
-            new CopperConverter(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool()),
+            new CopperConverter(FabricBlockSettings.of(Material.METAL).strength(2f)),
             ItemGroup.DECORATIONS);
 
     private static Block registerBlock(String name, Block block, ItemGroup group)
